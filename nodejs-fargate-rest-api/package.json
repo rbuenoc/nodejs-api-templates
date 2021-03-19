@@ -1,0 +1,32 @@
+{
+  "name": "rest-fargate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rebuild": "gulp rebuild",
+    "start": "gulp build && cd dist && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Belcorp Data Apis",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^9.3.1",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "mongodb": "^3.5.9",
+    "yenv": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa__router": "^8.0.2",
+    "@types/mongodb": "^3.5.25",
+    "@types/node": "^14.0.22",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-install": "^1.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^3.9.6"
+  }
+}

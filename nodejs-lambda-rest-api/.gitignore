@@ -1,0 +1,13 @@
+# Libraries
+node_modules
+
+# Config
+config*.yml
+!config.template.yml
+
+# Build
+dist
+dist*.zip
+
+# Editor
+.vscode

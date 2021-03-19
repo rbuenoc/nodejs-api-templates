@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-lambda-rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "gulp build",
+    "rebuild": "gulp rebuild",
+    "package": "gulp package",
+    "start": "gulp rebuild & sam local invoke -t deploy/sam-template.yaml -e deploy/local/event.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Belcorp Data Apis",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.5.9",
+    "yenv": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.5.25",
+    "@types/node": "^14.0.22",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-install": "^1.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-zip": "^5.0.1",
+    "typescript": "^3.9.6"
+  }
+}

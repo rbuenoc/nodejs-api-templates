@@ -1,0 +1,12 @@
+# Environment: ENV
+default:
+  APP_DEBUG: false
+
+  MONGODB_HOST: ""
+  MONGODB_IS_SHARDED: true
+  MONGODB_USERNAME: ""
+  MONGODB_PASSWORD: ""
+  MONGODB_USE_SSL: true
+  MONGODB_CA_CERT: null
+  MONGODB_DATABASE: ""
+  MONGODB_COLLECTION: ""

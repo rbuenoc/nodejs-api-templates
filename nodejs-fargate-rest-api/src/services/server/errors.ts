@@ -1,3 +1,6 @@
+import { logError } from "../../common/logging";
+
+
 export function configureErrorHandler(server: any) {
     server.use(async (ctx, next) => {
         try {
@@ -12,7 +15,7 @@ export function configureErrorHandler(server: any) {
             };
             ctx.set('Content-Type', 'application/problem+json');
             ctx.status = statusCode;
-            ctx.app.emit('error', err, ctx);
+            logError(err);
         }
     });
 }

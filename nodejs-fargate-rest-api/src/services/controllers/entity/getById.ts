@@ -1,11 +1,12 @@
 import { Context } from 'koa';
-import { findOne } from '../../mongodb';
+import { getEntityById } from '../../business/entity';
+import { logInfo } from '../../../common/logging';
 
 
-export default async function run(ctx: Context): Promise<any> {
+export async function getEntityByIdController(ctx: Context): Promise<any> {
     const { id } = ctx.params;
-    const entity = { id, name: 'Entity name', description: 'This is the entity name for the Entity REST API' };
-    //const entity = await findOne({ id });
+    const entity = await getEntityById({ id });
+    logInfo({ input: ctx.params, output: entity }, 'entity-get');
     ctx.body = {
         data: entity,
     };

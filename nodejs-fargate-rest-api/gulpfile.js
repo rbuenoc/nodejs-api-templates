@@ -20,10 +20,17 @@ const compile = () => {
 }
 
 
-const config = () => {
+const appConfig = () => {
     return src('src/config.yml')
         .pipe(dest('dist'));
 }
+
+const loggingConfig = () => {
+    return src('src/common/logging/config.json')
+        .pipe(dest('dist/common/logging'));
+}
+
+const config = parallel(appConfig, loggingConfig);
 
 
 const install = () => {

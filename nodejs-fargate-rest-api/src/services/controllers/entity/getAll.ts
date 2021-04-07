@@ -1,10 +1,9 @@
 import { Context } from 'koa';
-import { find } from '../../mongodb';
+import { getAllEntities } from '../../business/entity';
 
 
-export default async function run(ctx: Context): Promise<any> {
-    throw new Error('This is an intentional error to show the behavior against unhandled errors. Remove this from code.');
-    const entities = await find({});
+export async function getAllEntitiesController(ctx: Context): Promise<any> {
+    const entities = getAllEntities();
     ctx.body = {
         data: entities,
     };

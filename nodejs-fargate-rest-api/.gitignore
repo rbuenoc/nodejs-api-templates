@@ -9,5 +9,8 @@ config*.yml
 dist
 dist*.zip
 
+# Test
+.nyc_output
+
 # Editor
 .vscode

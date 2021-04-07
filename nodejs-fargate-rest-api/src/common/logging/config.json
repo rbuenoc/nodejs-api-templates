@@ -1,0 +1,18 @@
+{
+    "appenders": {
+        "app-console": {
+            "type": "stdout",
+            "layout": { "type": "pattern", "pattern": "%d %p - %c - %m%n" }
+        },
+        "app-entity-get": {
+            "type": "file",
+            "filename": "logs/entity-get.log",
+            "maxLogSize": 40960000,
+            "layout": { "type": "pattern", "pattern": "%d %p - %c - %m%n" }
+        }
+    },
+    "categories": {
+        "default": { "appenders": ["app-console"], "level": "info" },
+        "entity-get": { "appenders": ["app-console", "app-entity-get"], "level": "info" }
+    }
+}

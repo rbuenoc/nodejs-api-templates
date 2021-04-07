@@ -1,5 +1,5 @@
 import Router from '@koa/router';
-import { getEntityById, getAllEntities } from '../../controllers/entity';
+import { getEntityByIdController, getAllEntitiesController } from '../../controllers/entity';
 
 
 const router = new Router({
@@ -7,7 +7,7 @@ const router = new Router({
 });
 
 
-router.get('entity/id', '/:id', getEntityById);
-router.get('entity/', '/', getAllEntities);
+router.get('entity/id', '/:id', getEntityByIdController);
+router.get('entity/', '/', getAllEntitiesController);
 
 export default router;

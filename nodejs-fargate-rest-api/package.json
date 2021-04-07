@@ -6,7 +6,8 @@
   "scripts": {
     "rebuild": "gulp rebuild",
     "start": "gulp build && cd dist && node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd src && mocha -r ts-node/register --recursive 'tests/**/*.ts'",
+    "coverage": "cd src && nyc --reporter=text mocha -r ts-node/register --recursive 'tests/**/*.ts'"
   },
   "author": "Belcorp Data Apis",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "@koa/router": "^9.3.1",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
+    "log4js": "^6.3.0",
     "mongodb": "^3.5.9",
     "yenv": "^2.1.1"
   },
@@ -21,12 +23,18 @@
     "@types/koa": "^2.11.3",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa__router": "^8.0.2",
+    "@types/mocha": "^8.2.2",
     "@types/mongodb": "^3.5.25",
     "@types/node": "^14.0.22",
+    "@types/sinon": "^9.0.11",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-install": "^1.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "sinon": "^10.0.0",
+    "ts-node": "^9.1.1",
     "typescript": "^3.9.6"
   }
 }

@@ -1,10 +1,10 @@
 import { Db } from "mongodb";
-import getNewClient from './getClient';
+import { getClient } from './getClient';
 import { CONFIG } from '../../common/config';
 
 let cachedConnection: any = null;
 
-export default async function run() {
+export async function getConnection() {
     const cachedConnectionIsActive: boolean = cachedConnection && cachedConnection.serverConfig.isConnected();
     if (cachedConnectionIsActive) console.log('Using cache conection');
     return cachedConnectionIsActive ? Promise.resolve(cachedConnection) : _getNewConnection();
@@ -13,7 +13,7 @@ export default async function run() {
 
 async function _getNewConnection(): Promise<Db> {
     const database = CONFIG.MONGODB_DATABASE;
-    return getNewClient()
+    return getClient()
         .then(client => {
             cachedConnection = client.db(database);
             return cachedConnection;

@@ -1,8 +1,8 @@
-import getConnection from './getConnection';
+import { getConnection } from './getConnection';
 import { CONFIG } from '../../common/config';
 
 
-export default async function run(query) {
+export async function find(query) {
     const MONGODB_COLLECTION = CONFIG.MONGODB_COLLECTION;
     const findFnc = db => db.collection(MONGODB_COLLECTION).find(query).toArray()
         .then(documents => { return documents; });

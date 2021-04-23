@@ -3,7 +3,7 @@ import { CONFIG } from '../../common/config';
 import { readFileStringSync } from '../../common/tools/file';
 
 
-export default async function run(): Promise<MongoClient> {
+export async function getClient(): Promise<MongoClient> {
     const uri = _assembleUri();
     const options = _assembleOptions();
 

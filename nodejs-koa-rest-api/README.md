@@ -1,39 +1,37 @@
 # Entities REST API
 
-_API de entidades_
+_REST API that exposes entity data_
 
-## Como comenzar
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo._
+## Getting Started
+_These instructions will allow you to get a copy of the project running on your local machine for development purposes._
 
-### Pre-requisitos
-
-_Cosas que necesitas para instalar el software_
+### Requirements
 
 * [nodejs](https://nodejs.org/es)
 
-### Instalación
+### Installation
 
-_Instalar las dependencias del proyecto utilizando npm_
+_Install project dependencies using npm_
 
 ```
 npm install
 ```
 
-_Crear el archivo src/config.yml a partir del archivo src/config.template.yml, sustituyendo las variables de configuración correspondientes_
+_Create the src/config.yml file from the src/config.template.yml file, replacing the corresponding configuration variables_
 
-_Inicia el proyecto utilizando el siguiente comando_
+_Start the project using the following command_
 
 ```
 npm start
 ```
 
-_Para consultar datos de productos, utilizar la siguiente petición a localhost:3000, con el id a consultar_
+_For making a request, send the following HTTP request to localhost:3000, with the id to consult_
 
 ```
 GET /entity/{{id}} HTTP/1.1
 ```
 
-## Dependencias
+## Dependencies
 
 * [Koa](https://koajs.com) - Framework web
 * [Mongodb](https://www.mongodb.com/es) - NoSQL Database
